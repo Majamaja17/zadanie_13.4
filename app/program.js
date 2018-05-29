@@ -8,7 +8,7 @@ process.stdin.on('readable', function() {
         var instruction = input.trim();
         switch(instruction) {
             case '/exit':
-                process.stdout.write('Quitting app!\n'');
+                process.stdout.write('Quitting app!\n');
                 process.exit();
                 break;
             case '/sayhello':
