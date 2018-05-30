@@ -1,22 +1,22 @@
-var OSinfo = require("../OSInfo");
+var OSinfo = require('../modules/OSInfo');
 var os = require('os');
 
 
 process.stdin.setEncoding('utf-8');
 
-function timeCalculator(seconds) {
-
-
-
-	var seconds= process.stdin.read();
-    if (seconds !== null) {
-        var instruction = seconds.toString().trim();
-    
+process.stdin.on('readable', function(timeCalculator) {
 
     var minutes = Math.floor(seconds / 60),
         hours = Math.floor(seconds / 3600);
 
-	    switch (instruction) {
+    var seconds= process.stdin.read();
+	    if (seconds !== null) {
+	        var instruction = seconds.toString().trim();
+
+
+	function timeCalculator(seconds) {
+
+	    switch (seconds) {
 
 	    	case seconds = NaN:
 	    		process.stdout.write("Wpisano złą wartość\n");
@@ -28,18 +28,17 @@ function timeCalculator(seconds) {
 			    process.exit();
 			    break;
 
-			case seconds > 0 & seconds <! 3600:
+			case seconds > 0 & seconds !< 3600:
 	    		process.stdout.write(minutes);
 			    process.exit();
 			    break;
 
-			case seconds > 3600:
+			default seconds > 3600:
 	    		process.stdout.write(hours);
 			    process.exit();
-			    break;
-	    }
-
+			}
+		}
 	}
-}
+});
 
 exports.print = timeCalculator;
