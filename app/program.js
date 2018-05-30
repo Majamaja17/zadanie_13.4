@@ -1,4 +1,4 @@
-var OSinfo = require('../modules/OSInfo');
+var OSinfo = require("../OSInfo");
 var os = require('os');
 
 
@@ -28,14 +28,15 @@ function timeCalculator(seconds) {
 			    process.exit();
 			    break;
 
-			case seconds > 0 & seconds !< 3600:
+			case seconds > 0 & seconds <! 3600:
 	    		process.stdout.write(minutes);
 			    process.exit();
 			    break;
 
-			default seconds > 3600:
+			case seconds > 3600:
 	    		process.stdout.write(hours);
 			    process.exit();
+			    break;
 	    }
 
 	}
