@@ -1,19 +1,22 @@
 var OSinfo = require('../modules/OSInfo');
 var os = require('os');
 
+
 process.stdin.setEncoding('utf-8');
 
 function timeCalculator(seconds) {
 
-	var input = process.stdin.read();
-    if (input !== null) {
-        var instruction = input.toString().trim();
+
+
+	var seconds= process.stdin.read();
+    if (seconds !== null) {
+        var instruction = seconds.toString().trim();
     }
 
     var minutes = Math.floor(seconds / 60),
         hours = Math.floor(seconds / 3600);
 
-     switch (seconds) {
+     switch (instruction) {
 
     	case seconds = NaN:
     		process.stdout.write("Wpisano złą wartość\n");
@@ -30,10 +33,9 @@ function timeCalculator(seconds) {
 		    process.exit();
 		    break;
 
-		case seconds > 3600:
+		default seconds > 3600:
     		process.stdout.write(hours);
 		    process.exit();
-		    break;
     }
 
 
