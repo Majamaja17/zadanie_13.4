@@ -13,4 +13,4 @@ process.stdin.on('readable', function(){
 		}
 
 		exports.time = getTime;
-	})
+	});
