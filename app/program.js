@@ -1,4 +1,4 @@
-var OSinfo = require('../modules/OSInfo.js');
+var OSinfo = require('/OSInfo.js');
 
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function(){
@@ -9,7 +9,7 @@ process.stdin.on('readable', function(){
 		let uptime = Math.floor(time.uptime());
 		let hours = Math.floor(uptime / 3600);
 		let minutes = Math.floor(uptime / 60);
-		return (hours + ' hours ' + minutes + ' minutes ' + uptime + ' seconds')
+		return hours + ' hours ' + minutes + ' minutes ' + uptime + ' seconds'
 	}
 
 	exports.time = getTime;
